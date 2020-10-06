@@ -78,6 +78,16 @@ input('\033[91mPress Enter')
 while True:
     q = input('\033[1;36m"Will you assist us during this trying time?":')
     if q == 'y' or q == 'Y' or q == 'YES' or q == 'yes' or q == 'Yes' or q == 'sure' or q == 'Sure' \
-            or q == 'SURE' or q == 'ok' or q == 'OK' or q == 'Ok' or q == 'why not' or q == 'Why not':
-        print('\033[1;36m Great!!')
+            or q == 'SURE' or q == 'ok' or q == 'OK' or q == 'Ok' or q == 'why not' or q == 'Why not' or q == 'yee' \
+            or q == 'Yeet' or q == 'YEET' or q == 'yeet' or q == 'Why not' or q == 'yep' or q == 'Yep' \
+            or q == 'yup or q == Yup':
+        print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
+        input('\033[91mPress Enter')
+        print('\033[34mObtained Rope')
+        input('\033[91mPress Enter')
+        break
+    else:
+        print('\033[91minvalid input')
+        input('\033[91mPress Enter')
+        continue
 
