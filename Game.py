@@ -13,7 +13,7 @@ while True:
 
     if player_class == 'K' or player_class == 'Knight' or player_class == 'KNIGHT' or \
             player_class == 'k' or player_class == 'knight':
-        print('\033[1;36m"The mighty Sir {}, the honorable! Noble white Knight, You wield the great master sword,\n'
+        print('\033[1;36m"The mighty Sir {}! Noble white Knight, You wield the great master sword,\n'
               'bane of all evil and totally not a possible lawsuit, you have one health potion and\na total '
               'HP of 20"'.format(player_name))
         input('\033[91mPress Enter')
@@ -86,8 +86,53 @@ while True:
         print('\033[34mObtained Rope')
         input('\033[91mPress Enter')
         break
+    elif q == 'n' or q == 'N' or q == 'No' or q == 'NO' or q == 'no' or q == 'Nope' or q == 'nope' or q == 'nah' \
+            or q == 'Nah' or q == 'screw off' or q == 'Screw off' or q == 'shut up' or q == 'Shut up'\
+            or q == 'no thanks' or q == 'No thanks' or q == 'another time' or q == 'im good':
+        comeon = input('\033[1;36m"Oh come on please?":')
+        if comeon == 'y' or comeon == 'Y' or comeon == 'YES' or comeon == 'yes' or comeon == 'Yes'\
+                or comeon == 'sure' or comeon == 'Sure' or comeon == 'SURE' or comeon == 'ok' or comeon == 'OK'\
+                or comeon == 'Ok' or comeon == 'why not' or comeon == 'Why not' or comeon == 'yee' \
+                or comeon == 'Yeet' or comeon == 'YEET' or comeon == 'yeet' or comeon == 'Why not'\
+                or comeon == 'yep' or comeon == 'Yep' or comeon == 'yup' or comeon == 'Yup':
+            print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
+            input('\033[91mPress Enter')
+            print('\033[34mObtained Rope')
+            input('\033[91mPress Enter')
+            break
+        elif comeon == 'n' or comeon == 'N' or comeon == 'No' or comeon == 'no' or comeon == 'Nope' or comeon == 'nope'\
+                or comeon == 'nah' or comeon == 'Nah' or comeon == 'NO' or comeon == 'screw off'\
+                or comeon == 'Screw off'or comeon == 'shut up' or comeon == 'Shut up' or comeon == 'no thanks'\
+                or comeon == 'No thanks' or comeon == 'another time' or comeon == 'im good':
+            lastchance = input('\033[1;36m"If you do it ill throw in a hefty chunk of gold and a swift booty slap":')
+            if lastchance == 'y' or lastchance == 'Y' or lastchance == 'YES' or lastchance == 'yes'\
+                    or lastchance == 'Yes' or lastchance == 'sure' or lastchance == 'Sure' or lastchance == 'SURE'\
+                    or lastchance == 'ok' or lastchance == 'OK' or lastchance == 'Ok' or lastchance == 'why not'\
+                    or lastchance == 'Why not' or lastchance == 'yee' or lastchance == 'Yeet' or lastchance == 'YEET'\
+                    or lastchance == 'yeet' or lastchance == 'Why not' or lastchance == 'yep' or lastchance == 'Yep' \
+                    or lastchance == 'yup' or lastchance == 'Yup':
+                print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
+                input('\033[91mPress Enter')
+                print('\033[34mObtained Rope')
+                input('\033[91mPress Enter')
+                break
+            elif lastchance == 'n' or lastchance == 'N' or lastchance == 'No' or lastchance == 'no'\
+                    or lastchance == 'Nope' or lastchance == 'NO' or lastchance == 'nope' or lastchance == 'nah' \
+                    or lastchance == 'Nah' or lastchance == 'screw off' or lastchance == 'Screw off'\
+                    or lastchance == 'shut up' or lastchance == 'Shut up' or lastchance == 'no thanks'\
+                    or lastchance == 'No thanks' or lastchance == 'another time' or lastchance == 'im good':
+                print('\033[1;36m"Fine then...... dick"')
+                print('\033[34mAnd thus the adventure ends! Thanks for playing')
+                quit()
+            else:
+                print('\033[91minvalid input')
+                input('\033[91mPress Enter')
+                continue
+        else:
+            print('\033[91minvalid input')
+            input('\033[91mPress Enter')
+            continue
     else:
         print('\033[91minvalid input')
         input('\033[91mPress Enter')
         continue
-
