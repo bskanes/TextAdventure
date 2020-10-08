@@ -1,6 +1,6 @@
+import random
 print('\033[34mWelcome to my text based fantasy adventure game! simply type and hit enter to play!')
 input('\033[91mPress Enter')
-
 
 player_name = input('\033[34mWhat is your name adventurer?:')
 playerclass = ''
@@ -11,53 +11,50 @@ while True:
     print('\033[34m-Available classes-\n*MAGE*\n*KNIGHT*\n*DUMBASS*')
     player_class = input('\033[34mChoose your class:')
 
-    if player_class == 'K' or player_class == 'Knight' or player_class == 'KNIGHT' or \
-            player_class == 'k' or player_class == 'knight':
+    if player_class.lower() == 'k' or player_class.lower() == 'knight':
         print('\033[1;36m"The mighty Sir {}! Noble white Knight, You wield the great master sword,\n'
               'bane of all evil and totally not a possible lawsuit, you have one health potion and\na total '
               'HP of 20"'.format(player_name))
         input('\033[91mPress Enter')
         a = input('\033[34mIs KNIGHT the class for you?:')
 
-        if a == 'yes' or a == 'Yes' or a == 'y' or a == 'Y' or a == 'YES':
+        if a.lower() == 'yes' or a.lower() == 'y':
             playerclass = 'Knight'
             break
 
-        elif a == 'no' or a == 'No' or a == 'n' or a == 'N' or a == 'NO':
+        elif a.lower() == 'no' or a.lower() == 'n':
             continue
         else:
             print('\033[91minvalid input')
             input('\033[91mPress Enter')
             continue
-    elif player_class == 'M' or player_class == 'm' or player_class == 'MAGE' \
-            or player_class == 'Mage' or player_class == 'mage':
-        print(
-            '\033[1;36m"Ah yes, The Master of Mystics himself, {} The Wise! Your skills as a sorcerer are unmatched!\n'
-            'You wield your staff of fireball, carry two health potions and have a total HP of 14"'.format(player_name))
+    elif player_class.lower() == 'm' or player_class.lower() == 'mage':
+        print('\033[1;36m"Ah yes, The Master of Mystics himself, {} The Wise! Your skills as a sorcerer are\n'
+              'unmatched! You wield your staff of fireball and some edgy eyeliner. You have two health potions\n'
+              'and have a total HP of 14"'.format(player_name))
         input('\033[91mPress Enter')
         b = input('\033[34mIs MAGE the class for you?:')
-        if b == 'yes' or b == 'Yes' or b == 'y' or b == 'Y' or b == 'YES':
+        if b.lower() == 'yes' or b.lower() == 'y':
             playerclass = 'Mage'
             break
 
-        elif b == 'no' or b == 'No' or b == 'n' or b == 'N' or b == 'NO':
+        elif b.lower() == 'no' or b.lower() == 'n':
             continue
         else:
             print('\033[91minvalid input')
             input('\033[91mPress Enter')
             continue
-    elif player_class == 'D' or player_class == 'd' or player_class == 'DUMBASS' or \
-            player_class == 'Dumbass' or player_class == 'dumbass':
+    elif player_class.lower() == 'd' or player_class.lower() == 'dumbass':
         print('\033[1;36m"Oh... Dumpy {} the Dumbass... I was expecting someone uhhhh more suited for\n'
               'this kind of tale... oh I see you are wielding a half eaten sandwich, carrying a bottle of ketchup\n'
               'and have a HP total of 16)"'.format(player_name))
         input('\033[91mPress Enter')
         c = input('\033[34mdo you want to be a Dumbass?:')
-        if c == 'yes' or c == 'Yes' or c == 'y' or c == 'Y' or c == 'YES':
+        if c.lower() == 'yes' or c.lower() == 'y':
             playerclass = 'Dumbass'
             break
 
-        elif c == 'no' or c == 'No' or c == 'n' or c == 'N' or c == 'NO':
+        elif c.lower() == 'no' or c.lower() == 'n':
             continue
         else:
             print('\033[91minvalid input')
@@ -77,50 +74,42 @@ input('\033[91mPress Enter')
 
 while True:
     q = input('\033[1;36m"Will you assist us during this trying time?":')
-    if q == 'y' or q == 'Y' or q == 'YES' or q == 'yes' or q == 'Yes' or q == 'sure' or q == 'Sure' \
-            or q == 'SURE' or q == 'ok' or q == 'OK' or q == 'Ok' or q == 'why not' or q == 'Why not' or q == 'yee' \
-            or q == 'Yeet' or q == 'YEET' or q == 'yeet' or q == 'Why not' or q == 'yep' or q == 'Yep' \
-            or q == 'yup or q == Yup':
+    if q.lower() == 'y' or q.lower() == 'yes' or q.lower() == 'sure' \
+            or q.lower() == 'ok' or q.lower() == 'why not' or q.lower() == 'yee' \
+            or q.lower() == 'yeet' or q.lower() == 'yep' or q.lower() == 'yup':
         print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
         input('\033[91mPress Enter')
-        print('\033[34mObtained Rope')
+        print('\033[34m*Obtained Rope*')
         input('\033[91mPress Enter')
         break
-    elif q == 'n' or q == 'N' or q == 'No' or q == 'NO' or q == 'no' or q == 'Nope' or q == 'nope' or q == 'nah' \
-            or q == 'Nah' or q == 'screw off' or q == 'Screw off' or q == 'shut up' or q == 'Shut up'\
-            or q == 'no thanks' or q == 'No thanks' or q == 'another time' or q == 'im good':
+    elif q.lower() == 'n' or q.lower() == 'no' or q.lower() == 'nope' or q.lower() == 'nah' \
+            or q.lower() == 'screw off' or q.lower() == 'shut up' or q.lower() == 'no thanks'\
+            or q.lower() == 'another time' or q.lower() == 'im good':
         comeon = input('\033[1;36m"Oh come on please?":')
-        if comeon == 'y' or comeon == 'Y' or comeon == 'YES' or comeon == 'yes' or comeon == 'Yes'\
-                or comeon == 'sure' or comeon == 'Sure' or comeon == 'SURE' or comeon == 'ok' or comeon == 'OK'\
-                or comeon == 'Ok' or comeon == 'why not' or comeon == 'Why not' or comeon == 'yee' \
-                or comeon == 'Yeet' or comeon == 'YEET' or comeon == 'yeet' or comeon == 'Why not'\
-                or comeon == 'yep' or comeon == 'Yep' or comeon == 'yup' or comeon == 'Yup':
+        if comeon.lower() == 'y' or comeon.lower() == 'yes' or comeon.lower() == 'sure' \
+                or comeon.lower() == 'ok' or comeon.lower() == 'why not' or comeon.lower() == 'yee' \
+                or comeon.lower() == 'yeet' or comeon.lower() == 'yep' or comeon.lower() == 'yup':
             print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
             input('\033[91mPress Enter')
-            print('\033[34mObtained Rope')
+            print('\033[34m*Obtained Rope*')
             input('\033[91mPress Enter')
             break
-        elif comeon == 'n' or comeon == 'N' or comeon == 'No' or comeon == 'no' or comeon == 'Nope' or comeon == 'nope'\
-                or comeon == 'nah' or comeon == 'Nah' or comeon == 'NO' or comeon == 'screw off'\
-                or comeon == 'Screw off'or comeon == 'shut up' or comeon == 'Shut up' or comeon == 'no thanks'\
-                or comeon == 'No thanks' or comeon == 'another time' or comeon == 'im good':
+        elif comeon.lower() == 'n' or comeon.lower() == 'no' or comeon.lower() == 'nope' or comeon.lower() == 'nah' \
+                or comeon.lower() == 'screw off' or comeon.lower() == 'shut up' or comeon.lower() == 'no thanks' \
+                or comeon.lower() == 'another time' or comeon.lower() == 'im good':
             lastchance = input('\033[1;36m"If you do it ill throw in a hefty chunk of gold and a swift booty slap":')
-            if lastchance == 'y' or lastchance == 'Y' or lastchance == 'YES' or lastchance == 'yes'\
-                    or lastchance == 'Yes' or lastchance == 'sure' or lastchance == 'Sure' or lastchance == 'SURE'\
-                    or lastchance == 'ok' or lastchance == 'OK' or lastchance == 'Ok' or lastchance == 'why not'\
-                    or lastchance == 'Why not' or lastchance == 'yee' or lastchance == 'Yeet' or lastchance == 'YEET'\
-                    or lastchance == 'yeet' or lastchance == 'Why not' or lastchance == 'yep' or lastchance == 'Yep' \
-                    or lastchance == 'yup' or lastchance == 'Yup':
+            if lastchance.lower() == 'y' or lastchance.lower() == 'yes' or lastchance.lower() == 'sure' \
+                    or lastchance.lower() == 'ok' or lastchance.lower() == 'why not' or lastchance.lower() == 'yee' \
+                    or lastchance.lower() == 'yeet' or lastchance.lower() == 'yep' or lastchance.lower() == 'yup':
                 print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
                 input('\033[91mPress Enter')
-                print('\033[34mObtained Rope')
+                print('\033[34m*Obtained Rope*')
                 input('\033[91mPress Enter')
                 break
-            elif lastchance == 'n' or lastchance == 'N' or lastchance == 'No' or lastchance == 'no'\
-                    or lastchance == 'Nope' or lastchance == 'NO' or lastchance == 'nope' or lastchance == 'nah' \
-                    or lastchance == 'Nah' or lastchance == 'screw off' or lastchance == 'Screw off'\
-                    or lastchance == 'shut up' or lastchance == 'Shut up' or lastchance == 'no thanks'\
-                    or lastchance == 'No thanks' or lastchance == 'another time' or lastchance == 'im good':
+            elif lastchance.lower() == 'n' or lastchance.lower() == 'no' or lastchance.lower() == 'nope'\
+                    or lastchance.lower() == 'nah' or lastchance.lower() == 'screw off'\
+                    or lastchance.lower() == 'shut up' or lastchance.lower() == 'no thanks'\
+                    or lastchance.lower() == 'another time' or lastchance.lower() == 'im good':
                 print('\033[1;36m"Fine then...... dick"')
                 print('\033[34mAnd thus the adventure ends! Thanks for playing')
                 quit()
