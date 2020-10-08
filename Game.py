@@ -1,7 +1,17 @@
 import random
-print('\033[34mWelcome to my text based fantasy adventure game! simply type and hit enter to play!')
-input('\033[91mPress Enter')
 
+
+def enter():
+    input('\033[91mPress Enter')
+
+
+def error():
+    print('\033[91minvalid input')
+    input('\033[91mPress Enter')
+
+
+print('\033[34mWelcome to my text based fantasy adventure game! simply type and hit enter to play!')
+enter()
 player_name = input('\033[34mWhat is your name adventurer?:')
 playerclass = ''
 knight_health = 20
@@ -125,3 +135,34 @@ while True:
         print('\033[91minvalid input')
         input('\033[91mPress Enter')
         continue
+print('\033[34mYou walk through the city gates looking back upon the massive walls towering over you. Turning around\n'
+      'you see the vast farm lands stretching for miles outside the city walls.')
+enter()
+if playerclass == 'Dumbass':
+    print('\033[34mYou turn around once more confused... Did I come from that way or this way? I uhhh... looking at\n'
+          'the ground you see a butterfly. COOL! you proceed to walk in and out of the city before a guard sees you,\n'
+          'turns you around and shoves you in the direction youre supposed to head')
+    enter()
+print('\033[34mafter walking for a few hours you begin to see the effects the goblin raids have had on the outer\n'
+      'farms. Many crop fields lay barren and farm animals dead. You can see most families have boarded up their\n'
+      'windows and are peering out the window at you')
+enter()
+if playerclass == 'Mage':
+    print('\033[34mUsing some healing magic you are able to help some of the injured animals. A thankful\n'
+          'disney esque bird comes toward you and offers you one of its feathers')
+    enter()
+    print('\033[34m*Obtained Feather*')
+    enter()
+if playerclass == 'Dumbass':
+    print('\033[34mWow these animals sure are tired!')
+    enter()
+print('\033[34mYou travel past the farmlands and arrive at a cave opening fortified with spikes and bones.\n'
+      'out of the corner of your eye you notice a fallen knight haphazardly buried in the ground')
+enter()
+if playerclass == 'Knight':
+    print('\033[34mSeeing a fallen homie you give him a proper burial... after searching his corpse')
+    print('\033[34m*Obtained Dead Guys Dagger*')
+    enter()
+print('\033[34mEntering the cave you see it is cold and nasty. REAL nasty. Like trash and green snot everywhere...\n '
+      'wait thats not green snot! THATS A GOBLIN! FIGHT!!!')
+enter()
