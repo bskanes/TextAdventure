@@ -8,15 +8,29 @@ def enter():
 def error():
     print('\033[91minvalid input')
     input('\033[91mPress Enter')
+# Enemy's
 
+
+goblin_one_stats = {'Health': 20}
+goblin_one_attack = (random.randint(1, 3))
 
 print('\033[34mWelcome to my text based fantasy adventure game! simply type and hit enter to play!')
 enter()
 player_name = input('\033[34mWhat is your name adventurer?:')
 playerclass = ''
-knight_health = 20
-mage_health = 14
-dumbass_health = 16
+knight_health_potions = 1
+knight_stats = {'Health': 20, 'Attack': 'D6', 'Gold': 5, 'Potions': knight_health_potions}
+knight_attack = (random.randint(1, 6))
+knight_items = []
+mage_health_potions = 2
+mage_stats = {'Health': 14, 'Attack': 'D10', 'Gold': 5, 'Potions': mage_health_potions}
+mage_attack = (random.randint(1, 10))
+mage_items = []
+dumbass_health_potions = 1
+dumbass_stats = {'Health': 16, 'Attack': 'D8', 'Gold': 5, 'Ketchup Bottles': dumbass_health_potions}
+dumbass_attack = (random.randint(1, 8))
+dumbass_items = []
+
 while True:
     print('\033[34m-Available classes-\n*MAGE*\n*KNIGHT*\n*DUMBASS*')
     player_class = input('\033[34mChoose your class:')
@@ -79,7 +93,7 @@ print('\033[1;36m"My name is Drucan, I assist the king with his kingly duties! T
       'you, great {} {}, to help with an urgent matter"'.format(playerclass, player_name))
 input('\033[91mPress Enter')
 print('\033[1;36m"Goblins have been raiding nearby farms. We have tracked them down to a cave south of\n'
-      'here but have been unsuccessful on removing the pests."')
+      'here but have been unsuccessful with removing the pests."')
 input('\033[91mPress Enter')
 
 while True:
@@ -90,6 +104,9 @@ while True:
         print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
         input('\033[91mPress Enter')
         print('\033[34m*Obtained Rope*')
+        knight_items.append('Rope')
+        mage_items.append('Rope')
+        dumbass_items.append('Rope')
         input('\033[91mPress Enter')
         break
     elif q.lower() == 'n' or q.lower() == 'no' or q.lower() == 'nope' or q.lower() == 'nah' \
@@ -102,6 +119,9 @@ while True:
             print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
             input('\033[91mPress Enter')
             print('\033[34m*Obtained Rope*')
+            knight_items.append('Rope')
+            mage_items.append('Rope')
+            dumbass_items.append('Rope')
             input('\033[91mPress Enter')
             break
         elif comeon.lower() == 'n' or comeon.lower() == 'no' or comeon.lower() == 'nope' or comeon.lower() == 'nah' \
@@ -114,6 +134,9 @@ while True:
                 print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
                 input('\033[91mPress Enter')
                 print('\033[34m*Obtained Rope*')
+                knight_items.append('Rope')
+                mage_items.append('Rope')
+                dumbass_items.append('Rope')
                 input('\033[91mPress Enter')
                 break
             elif lastchance.lower() == 'n' or lastchance.lower() == 'no' or lastchance.lower() == 'nope'\
@@ -152,17 +175,144 @@ if playerclass == 'Mage':
           'disney esque bird comes toward you and offers you one of its feathers')
     enter()
     print('\033[34m*Obtained Feather*')
+    mage_items.append('Feather')
     enter()
 if playerclass == 'Dumbass':
     print('\033[34mWow these animals sure are tired!')
     enter()
 print('\033[34mYou travel past the farmlands and arrive at a cave opening fortified with spikes and bones.\n'
-      'out of the corner of your eye you notice a fallen knight haphazardly buried in the ground')
+      'Out of the corner of your eye you notice a fallen knight haphazardly buried in the ground')
 enter()
 if playerclass == 'Knight':
     print('\033[34mSeeing a fallen homie you give him a proper burial... after searching his corpse')
     print('\033[34m*Obtained Dead Guys Dagger*')
+    knight_items.append('Dead Guys Dagger')
     enter()
-print('\033[34mEntering the cave you see it is cold and nasty. REAL nasty. Like trash and green snot everywhere...\n '
+print('\033[34mEntering the cave you see it is cold and nasty. REAL nasty. Like trash and green snot everywhere...\n'
       'wait thats not green snot! THATS A GOBLIN! FIGHT!!!')
 enter()
+while True:
+    goblin_one_attack = (random.randint(1, 3))
+    knight_attack = (random.randint(1, 6))
+    mage_attack = (random.randint(1, 10))
+    dumbass_attack = (random.randint(1, 8))
+    # Fight Stuff
+
+    print('\033[31mGoblin {}'.format(goblin_one_stats))
+    dostuff = input('\033[31m[Attack] [Items] [Stats] [Potions]:')
+    if dostuff.lower() == 'a' or dostuff.lower() == 'attack':
+        if playerclass == 'Knight':
+            damage = int(knight_attack)
+            print('\033[31mYou did {} damage!'.format(damage))
+            goblin_one_stats['Health'] -= damage
+        if playerclass == 'Mage':
+            damage = int(mage_attack)
+            print('\033[31mYou did {} damage!'.format(damage))
+            goblin_one_stats['Health'] -= damage
+        if playerclass == 'Dumbass':
+            damage = int(dumbass_attack)
+            print('\033[31mYou did {} damage!'.format(damage))
+            goblin_one_stats['Health'] -= damage
+        enter()
+        if goblin_one_stats['Health'] <= 0:
+            break
+        goblindamage = int(goblin_one_attack)
+        print('\033[31mThe goblin did {} damage to you'.format(goblindamage))
+        if playerclass == 'Knight':
+            knight_stats['Health'] -= goblindamage
+        if playerclass == 'Mage':
+            mage_stats['Health'] -= goblindamage
+        if playerclass == 'Dumbass':
+            dumbass_stats['Health'] -= goblindamage
+    elif dostuff.lower == 'i' or dostuff.lower() == 'item' or dostuff.lower() == 'items':
+        if playerclass == 'Knight':
+            print('\033[31m*Items*')
+            print(knight_items)
+            useitem = input('\033[31mWhat item would you like to use? Press enter to go back:')
+            if useitem.lower() == 'rope' or useitem.lower == 'r':
+                print('\033[31mYou swiftly tie the goblin up')
+                break
+            if useitem.lower() == 'dagger' or useitem.lower() == 'dead guys dagger' or useitem.lower() == 'd':
+                print('\033[31mYou throw the dagger through the goblins heart!')
+                break
+            else:
+                continue
+        elif playerclass == 'Mage':
+            print('\033[31m*Items*')
+            print(mage_items)
+            useitemmage = input('\033[31mWhat item would you like to use? Press enter to go back:')
+            if useitemmage.lower() == 'feather' or useitemmage.lower() == 'f':
+                print('\033[31mYou tickle him till he explodes!')
+                break
+            if useitemmage.lower() == 'rope' or useitemmage.lower == 'r':
+                print('\033[31mYou swiftly tie the goblin up')
+                break
+            else:
+                continue
+        elif playerclass == 'Dumbass':
+            print('\033[31m*Items*')
+            print(dumbass_items)
+            useitemdumbass = input('\033[31mWhat item would you like to use? Press enter to go back:')
+            if useitemdumbass.lower() == 'rope' or useitemdumbass.lower == 'r':
+                print('\033[31mYou swiftly tie the goblin up')
+                break
+            else:
+                continue
+    if dostuff.lower() == 'potions' or dostuff.lower() == 'p' or dostuff.lower() == 'potion':
+        heal = input('\033[31mWould you like to use a health potion?:')
+        if heal.lower() == 'y' or heal.lower() == 'yes' or heal.lower() == 'sure' \
+                or heal.lower() == 'ok' or heal.lower() == 'why not' or heal.lower() == 'yee' \
+                or heal.lower() == 'yeet' or heal.lower() == 'yep' or heal.lower() == 'yup':
+            if playerclass == 'Knight':
+                if knight_health_potions > 0:
+                    knight_health_potions -= 1
+                    amount_added = (random.randint(1, 8))
+                    knight_stats['Health'] += amount_added
+                    print('\033[31mYou healed yourself for {}'.format(amount_added))
+                    enter()
+                    continue
+                else:
+                    print('\033[31mYou are out of Health Potions')
+                    enter()
+                    continue
+            if playerclass == 'Mage':
+                if mage_health_potions > 0:
+                    mage_health_potions -= 1
+                    amount_added = (random.randint(1, 8))
+                    mage_stats['Health'] += amount_added
+                    print('\033[31mYou healed yourself for {}'.format(amount_added))
+                    enter()
+                    continue
+                else:
+                    print('\033[31mYou are out of Health Potions')
+                    enter()
+                    continue
+            if playerclass == 'Dumbass':
+                if dumbass_health_potions > 0:
+                    dumbass_health_potions -= 1
+                    amount_added = (random.randint(1, 8))
+                    dumbass_stats['Health'] += amount_added
+                    print('\033[31mYou healed yourself for {}'.format(amount_added))
+                    enter()
+                    continue
+                else:
+                    print('\033[31mYou are out of Health Potions')
+                    enter()
+                    continue
+    if dostuff.lower() == 'stats' or dostuff.lower() == 's' or dostuff.lower() == 'stat':
+        if playerclass == 'Knight':
+            print(knight_stats)
+            enter()
+            continue
+        if playerclass == 'Mage':
+            print(mage_stats)
+            enter()
+            continue
+        if playerclass == 'Dumbass':
+            print(dumbass_stats)
+            enter()
+            continue
+        break
+print('\033[34mYOU WIN!')
+enter()
+print('\033[34mThats all for now folks')
