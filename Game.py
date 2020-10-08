@@ -196,6 +196,7 @@ while True:
     knight_attack = (random.randint(1, 6))
     mage_attack = (random.randint(1, 10))
     dumbass_attack = (random.randint(1, 8))
+
     # Fight Stuff
 
     print('\033[31mGoblin {}'.format(goblin_one_stats))
@@ -224,6 +225,7 @@ while True:
             mage_stats['Health'] -= goblindamage
         if playerclass == 'Dumbass':
             dumbass_stats['Health'] -= goblindamage
+        enter()
     elif dostuff.lower == 'i' or dostuff.lower() == 'item' or dostuff.lower() == 'items':
         if playerclass == 'Knight':
             print('\033[31m*Items*')
