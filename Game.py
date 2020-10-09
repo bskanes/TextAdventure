@@ -226,16 +226,21 @@ while True:
         if playerclass == 'Dumbass':
             dumbass_stats['Health'] -= goblindamage
         enter()
-    elif dostuff.lower == 'i' or dostuff.lower() == 'item' or dostuff.lower() == 'items':
+        if knight_stats['Health'] <= 0 or mage_stats['Health'] <= 0 or dumbass_stats['Health'] <= 0:
+            print('You Died. GAME OVER')
+            quit()
+    elif dostuff.lower() == 'i' or dostuff.lower() == 'item' or dostuff.lower() == 'items':
         if playerclass == 'Knight':
             print('\033[31m*Items*')
             print(knight_items)
             useitem = input('\033[31mWhat item would you like to use? Press enter to go back:')
             if useitem.lower() == 'rope' or useitem.lower == 'r':
                 print('\033[31mYou swiftly tie the goblin up')
+                knight_items.remove('Rope')
                 break
             if useitem.lower() == 'dagger' or useitem.lower() == 'dead guys dagger' or useitem.lower() == 'd':
                 print('\033[31mYou throw the dagger through the goblins heart!')
+                knight_items.remove('Dead Guys Dagger')
                 break
             else:
                 continue
@@ -245,9 +250,11 @@ while True:
             useitemmage = input('\033[31mWhat item would you like to use? Press enter to go back:')
             if useitemmage.lower() == 'feather' or useitemmage.lower() == 'f':
                 print('\033[31mYou tickle him till he explodes!')
+                mage_items.remove('Feather')
                 break
             if useitemmage.lower() == 'rope' or useitemmage.lower == 'r':
                 print('\033[31mYou swiftly tie the goblin up')
+                mage_items.remove('Rope')
                 break
             else:
                 continue
@@ -257,6 +264,7 @@ while True:
             useitemdumbass = input('\033[31mWhat item would you like to use? Press enter to go back:')
             if useitemdumbass.lower() == 'rope' or useitemdumbass.lower == 'r':
                 print('\033[31mYou swiftly tie the goblin up')
+                dumbass_items.remove('Rope')
                 break
             else:
                 continue
@@ -317,4 +325,26 @@ while True:
         break
 print('\033[34mYOU WIN!')
 enter()
-print('\033[34mThats all for now folks')
+if playerclass == "Dumbass":
+    print('\033[34mYou notice as you move deeper in the cave that wow it is really bright. Youre.... you went outside\n'
+          'its the sun... you idiot. You know what take this!')
+    enter()
+    print('\033[34m*Obtained Map*')
+    dumbass_items.append('Map')
+    enter()
+    print('\033[34mJeez')
+    enter()
+print('\033[34mMoving past your fallen foe you see bright lights emerging from deep inside. There seems to be\n'
+      'a fork in the cave with two massive bonfires on both sides lighting up each tunnel')
+enter()
+print('\033[34mPeering down the left tunnel you see bones, rotting flesh and a large wooden table coated with blood.\n'
+      'standing atop the table is a grubby goblin wearing a "Kiss the cook" apron sharpening a butchers knife,\n'
+      'he hasnt noticed you yet')
+enter()
+print('looking away from that disturbing sight, you look down the right tunnel. You see several empty cages with\n'
+      'shackles hanging from them. A small puppy has his head down amd is sniffing inside one of the open cages')
+enter()
+if playerclass == 'Dumbass':
+    print('')
+choice = ('will you go left or right?:')
+
