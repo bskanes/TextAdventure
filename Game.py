@@ -69,7 +69,7 @@ while True:
             input('\033[91mPress Enter')
             continue
     elif player_class.lower() == 'd' or player_class.lower() == 'dumbass':
-        print('\033[1;36m"Oh... Dumpy {} the Dumbass... I was expecting someone uhhhh more suited for\n'
+        print('\033[1;36m"Oh... Dumpy {} the Dumbass... I was expecting someone uh... more suited for\n'
               'this kind of tale... oh I see you are wielding a half eaten sandwich, carrying a bottle of ketchup\n'
               'and have a HP total of 16)"'.format(player_name))
         input('\033[91mPress Enter')
@@ -99,7 +99,7 @@ input('\033[91mPress Enter')
 while True:
     q = input('\033[1;36m"Will you assist us during this trying time?":')
     if q.lower() == 'y' or q.lower() == 'yes' or q.lower() == 'sure' \
-            or q.lower() == 'ok' or q.lower() == 'why not' or q.lower() == 'yee' \
+            or q.lower() == 'ok' or q.lower() == 'why not' or q.lower() == 'ye' \
             or q.lower() == 'yeet' or q.lower() == 'yep' or q.lower() == 'yup':
         print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
         input('\033[91mPress Enter')
@@ -114,7 +114,7 @@ while True:
             or q.lower() == 'another time' or q.lower() == 'im good':
         comeon = input('\033[1;36m"Oh come on please?":')
         if comeon.lower() == 'y' or comeon.lower() == 'yes' or comeon.lower() == 'sure' \
-                or comeon.lower() == 'ok' or comeon.lower() == 'why not' or comeon.lower() == 'yee' \
+                or comeon.lower() == 'ok' or comeon.lower() == 'why not' or comeon.lower() == 'ye' \
                 or comeon.lower() == 'yeet' or comeon.lower() == 'yep' or comeon.lower() == 'yup':
             print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
             input('\033[91mPress Enter')
@@ -129,7 +129,7 @@ while True:
                 or comeon.lower() == 'another time' or comeon.lower() == 'im good':
             lastchance = input('\033[1;36m"If you do it ill throw in a hefty chunk of gold and a swift booty slap":')
             if lastchance.lower() == 'y' or lastchance.lower() == 'yes' or lastchance.lower() == 'sure' \
-                    or lastchance.lower() == 'ok' or lastchance.lower() == 'why not' or lastchance.lower() == 'yee' \
+                    or lastchance.lower() == 'ok' or lastchance.lower() == 'why not' or lastchance.lower() == 'ye' \
                     or lastchance.lower() == 'yeet' or lastchance.lower() == 'yep' or lastchance.lower() == 'yup':
                 print('\033[1;36m"Great!! You must set out at once! Take this rope, it may come in handy"')
                 input('\033[91mPress Enter')
@@ -162,13 +162,13 @@ print('\033[34mYou walk through the city gates looking back upon the massive wal
       'you see the vast farm lands stretching for miles outside the city walls.')
 enter()
 if playerclass == 'Dumbass':
-    print('\033[34mYou turn around once more confused... Did I come from that way or this way? I uhhh... looking at\n'
-          'the ground you see a butterfly. COOL! you proceed to walk in and out of the city before a guard sees you,\n'
-          'turns you around and shoves you in the direction youre supposed to head')
+    print('\033[34mYou turn around once more confused... "Did I come from that way or this way? I uhhh..." looking at\n'
+          'the ground you see a butterfly. COOL! you proceed to start walking back into the city before a guard sees\n'
+          ' you, turns you around and shoves you in the direction youre supposed to head')
     enter()
-print('\033[34mafter walking for a few hours you begin to see the effects the goblin raids have had on the outer\n'
+print('\033[34mAfter walking for a few hours you begin to see the effects the goblin raids have had on the outer\n'
       'farms. Many crop fields lay barren and farm animals dead. You can see most families have boarded up their\n'
-      'windows and are peering out the window at you')
+      'windows and are peering out at you')
 enter()
 if playerclass == 'Mage':
     print('\033[34mUsing some healing magic you are able to help some of the injured animals. A thankful\n'
@@ -188,8 +188,8 @@ if playerclass == 'Knight':
     print('\033[34m*Obtained Dead Guys Dagger*')
     knight_items.append('Dead Guys Dagger')
     enter()
-print('\033[34mEntering the cave you see it is cold and nasty. REAL nasty. Like trash and green snot everywhere...\n'
-      'wait thats not green snot! THATS A GOBLIN! FIGHT!!!')
+print('\033[34mUpon entering the cave you cant help but notice just how nasty it is inside... REAL nasty. Like trash\n'
+      'and green snot everywhere... wait thats not green snot! THATS A GOBLIN! FIGHT!!!')
 enter()
 while True:
     goblin_one_attack = (random.randint(1, 3))
@@ -201,7 +201,7 @@ while True:
 
     print('\033[31mGoblin {}'.format(goblin_one_stats))
     dostuff = input('\033[31m[Attack] [Items] [Stats] [Potions]:')
-    if dostuff.lower() == 'a' or dostuff.lower() == 'attack':
+    if dostuff.lower() == 'a' or dostuff.lower() == 'attack' or dostuff.lower() == 'atk':
         if playerclass == 'Knight':
             damage = int(knight_attack)
             print('\033[31mYou did {} damage!'.format(damage))
@@ -326,25 +326,25 @@ while True:
 print('\033[34mYOU WIN!')
 enter()
 if playerclass == "Dumbass":
-    print('\033[34mYou notice as you move deeper in the cave that wow it is really bright. Youre.... you went outside\n'
-          'its the sun... you idiot. You know what take this!')
+    print('\033[34mYou begin walking once more towards a briliant light! as you near the source of it you realize\n'
+          '"wow, it is really bright!". You... you went outside. its the sun... you idiot. You know what take this!')
     enter()
-    print('\033[34m*Obtained Map*')
+    print('\033[34m*Obtained Map from narrator*')
     dumbass_items.append('Map')
     enter()
     print('\033[34mJeez')
     enter()
-print('\033[34mMoving past your fallen foe you see bright lights emerging from deep inside. There seems to be\n'
+print('\033[34mMoving past the fallen foe you see bright lights emerging from deep inside. There seems to be\n'
       'a fork in the cave with two massive bonfires on both sides lighting up each tunnel')
 enter()
 print('\033[34mPeering down the left tunnel you see bones, rotting flesh and a large wooden table coated with blood.\n'
       'standing atop the table is a grubby goblin wearing a "Kiss the cook" apron sharpening a butchers knife,\n'
       'he hasnt noticed you yet')
 enter()
-print('looking away from that disturbing sight, you look down the right tunnel. You see several empty cages with\n'
-      'shackles hanging from them. A small puppy has his head down amd is sniffing inside one of the open cages')
+print('\033[34mTurning away from that disturbing sight, you look down the right tunnel. You see several empty cages\n'
+      'with shackles hanging from them. A small puppy has his head down and is sniffing inside one of the open cages')
 enter()
 if playerclass == 'Dumbass':
     print('')
-choice = ('will you go left or right?:')
+choice = input('\033[34mwill you go left or right?:')
 
