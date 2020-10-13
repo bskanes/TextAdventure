@@ -348,15 +348,15 @@ while thingy:
 print('\033[34mYOU WIN!')
 enter()
 if playerclass == "Dumbass":
-    print('\033[34mYou begin walking once more towards a briliant light! as you near the source of it you realize\n'
-          '"wow, it is really bright!". You... you went outside. its the sun... you idiot. You know what take this!')
+    print('\033[34mYou begin walking once more towards a bright light! as you near the source of it you realize\n'
+          'You... you went outside. its the sun... you idiot. You know what take this!')
     enter()
     print('\033[34m*Obtained Map from narrator*')
     dumbass_items.append('Map')
     enter()
     print('\033[34mJeez')
     enter()
-print('\033[34mMoving past the fallen foe you see bright lights emerging from deep inside. There seems to be\n'
+print('\033[34mMoving past the fallen foe you see lights emerging from deep inside. There seems to be\n'
       'a fork in the cave with two massive bonfires on both sides lighting up each tunnel')
 enter()
 print('\033[34mPeering down the left tunnel you see bones, rotting flesh and a large wooden table coated with blood.\n'
